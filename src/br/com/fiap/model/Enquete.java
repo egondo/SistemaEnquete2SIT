@@ -12,5 +12,59 @@ public class Enquete {
 	
 	//para resolver a agregação
 	private Pergunta[] perguntas;
+	
+	public Enquete(String nome, String criador) {
+		this.nome = nome;
+		this.criador = criador;
+	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public LocalDate getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(LocalDate dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+
+	public String getCriador() {
+		return criador;
+	}
+
+	public void setCriador(String criador) {
+		this.criador = criador;
+	}
+
+	public Pergunta[] getPerguntas() {
+		return perguntas;
+	}
+
+	public void setPerguntas(Pergunta[] perguntas) {
+		this.perguntas = perguntas;
+	}
+
+	
 }
