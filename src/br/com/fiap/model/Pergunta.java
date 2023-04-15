@@ -9,13 +9,20 @@ public class Pergunta {
 	private boolean obrigatoria;
 	
 	private ItemEscolha[] itens;
+	private int topo = -1;
 	
 	public Pergunta(String questao, int ordem, int tipo) {
 		this.questao = questao;
 		this.ordem = ordem;
 		this.tipo = tipo;
+		this.itens = new ItemEscolha[6];
 	}
 
+	public void addItemEscolha(ItemEscolha ie) {
+		topo++;
+		itens[topo] = ie;
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -62,6 +69,17 @@ public class Pergunta {
 
 	public void setItens(ItemEscolha[] itens) {
 		this.itens = itens;
+	}
+
+	public String aplicacao() {
+		String s = ordem + ") " + questao + "\n";
+		if (tipo == 1 || tipo == 2) {
+			for(int i = 0; i <= topo; i++) {
+				ItemEscolha ie = itens[i];
+				s = s + ie.getOrdem() + " - " + ie.getDescricao() + "\n";
+			}
+		}
+		return s;
 	}
 
 	

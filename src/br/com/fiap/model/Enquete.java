@@ -12,12 +12,19 @@ public class Enquete {
 	
 	//para resolver a agregação
 	private Pergunta[] perguntas;
+	private int topo = -1;
 	
 	public Enquete(String nome, String criador) {
 		this.nome = nome;
 		this.criador = criador;
+		this.perguntas = new Pergunta[10];
 	}
 
+	public void addPergunta(Pergunta p) {
+		topo++;
+		this.perguntas[topo] = p;
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -64,6 +71,10 @@ public class Enquete {
 
 	public void setPerguntas(Pergunta[] perguntas) {
 		this.perguntas = perguntas;
+	}
+
+	public int size() {
+		return topo + 1;
 	}
 
 	
